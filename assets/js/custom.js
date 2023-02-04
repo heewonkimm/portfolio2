@@ -135,6 +135,16 @@ ScrollTrigger.matchMedia({
             .to(l, {scale:1})
         });
 
+
+        $(window).resize(function(){
+            location.reload();
+            scrollTrigger.refresh();
+        });
+
+        $(window).scroll(function(){
+            ScrollTrigger.refresh(true)
+        })
+
     },
     // medium
     "(max-width: 1023px)": function() {
@@ -201,11 +211,6 @@ ScrollTrigger.matchMedia({
     "all": function() {
       
         gsap.registerPlugin(ScrollTrigger);
-
-        $(window).resize(function(){
-            location.reload();
-            scrollTrigger.refresh();
-        })
         
         
         //메인//intro Hover ani
