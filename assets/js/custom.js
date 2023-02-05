@@ -1,5 +1,6 @@
-
-ScrollTrigger.matchMedia({
+$(function(){
+    
+    ScrollTrigger.matchMedia({
     // large
     "(min-width: 1024px)": function() {
 
@@ -274,3 +275,5 @@ ScrollTrigger.matchMedia({
     }
   });
 
+
+});
