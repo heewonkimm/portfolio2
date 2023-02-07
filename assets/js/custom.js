@@ -136,16 +136,6 @@ $(function(){
             .to(l, {scale:1})
         });
 
-
-        $(window).resize(function(){
-            location.reload();
-            scrollTrigger.refresh();
-        });
-
-        $(window).scroll(function(){
-            ScrollTrigger.refresh(true)
-        })
-
     },
     // medium
     "(max-width: 1023px)": function() {
@@ -271,6 +261,19 @@ $(function(){
             $(".header").css("color","#fff");
             $(".scroll_bg").removeClass('on')
         });
+
+        lastWidth = window.innerWidth;
+        $(window).resize(function(){
+        if(window.innerWidth != lastWidth){
+                location.reload();
+                scrollTrigger.refresh();
+        }
+        lastWidth = window.innerWidth;
+        });
+
+        $(window).scroll(function(){
+            ScrollTrigger.refresh(true)
+        })
 
     }
   });
