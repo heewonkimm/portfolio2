@@ -4,39 +4,6 @@ $(function(){
     // large
     "(min-width: 1024px)": function() {
 
-        //로드//img timeline
-        const loadAni = gsap.timeline();
-        loadAni
-        .to(".load_page .text_wrap", {duration:0.7, opacity:1, delay:0.5})
-        .addLabel('a')
-        .to(".load_page img.t1", {duration:0.3, opacity:1},'a')
-        .to(".load_page img.t4", {duration:0.3, opacity:1},'a+0.06')
-        .to(".load_page img.t1", {opacity:0},'a+1')
-        .to(".load_page img.t7", {duration:0.3, opacity:1},'a+0.07')
-        .to(".load_page img.t5", {duration:0.1, opacity:1},'a+15')
-        .to(".load_page img.t2", {duration:0.3, opacity:1},'a+2')
-        .to(".load_page img.t8", {duration:0.1, opacity:1},'a+15')
-        .to(".load_page img.t3", {duration:0.1, opacity:1},'a+18')
-        .to(".load_page img.t10", {duration:0.3, opacity:1},'a+0.08')
-        .to(".load_page img.t11", {duration:0.1, opacity:1},'a+19')
-        .to(".load_page img.t13", {duration:0.3, opacity:1},'a+0.09')
-        .to(".load_page img.t9", {duration:0.1, opacity:1},'a+5')
-        .to(".load_page img.t16", {duration:0.3, opacity:1},'a+0.10')
-        .to(".load_page img.t6", {duration:0.1, opacity:1},'a+3')
-        .to(".load_page img.t19", {duration:0.3, opacity:1},'a+0.12')
-        .to(".load_page img.t15", {duration:0.1, opacity:1},'a+1')
-        .to(".load_page img.t20", {duration:0.1, opacity:1},'a+18')
-        .addLabel('b')
-        .to(".load_page", {duration:0.5, display:"none"},'b')
-        .to(".wrapper", {height:"initial", overflow:"visible"},'b+0.3')
-        .addLabel('c')
-        .to(".wrapper", {duration:1, opacity:1},'c')
-        .to(".group_intro", {duration:0.6, scale:1},'c')
-
-        //로드//thumb_wrap scroll
-        gsap.to(".load_page .thumb_wrap", {duration:5, yPercent:-25});
-
-        
         //헤더//updates_list slide down
         $('#updates_list').click(function() {
             $('.list_item').css('max-height','102px');
@@ -140,19 +107,6 @@ $(function(){
     // medium
     "(max-width: 1023px)": function() {
 
-        //로드//img timeline
-        const loadAni = gsap.timeline();
-        loadAni
-        .to(".load_page .text_wrap", {duration:1, opacity:1, delay:0.5})
-        .to(".load_page .text_wrap", {duration:0.8, opacity:0, delay:0.6})
-        .addLabel('b')
-        .to(".load_page", {duration:0.5, display:"none"},'b')
-        .to(".wrapper", {height:"initial", overflow:"visible"},'b+0.3')
-        .addLabel('c')
-        .to(".wrapper", {duration:1, opacity:1},'c')
-        .to(".group_intro", {duration:0.6, scale:1},'c');
-
-
         //헤더 마우스 호버
         navMotion = gsap.timeline({
             paused:false,
@@ -202,6 +156,18 @@ $(function(){
     "all": function() {
       
         gsap.registerPlugin(ScrollTrigger);
+
+        //로드//img timeline
+        const loadAni = gsap.timeline();
+        loadAni
+        .to(".load_page .text_wrap", {duration:1, opacity:1, delay:0.5})
+        .to(".load_page .text_wrap", {duration:0.8, opacity:0, delay:0.6})
+        .addLabel('b')
+        .to(".load_page", {duration:0.5, display:"none"},'b')
+        .to(".wrapper", {height:"initial", overflow:"visible"},'b+0.3')
+        .addLabel('c')
+        .to(".wrapper", {duration:1, opacity:1},'c')
+        .to(".group_intro", {duration:0.6, scale:1},'c');
         
         
         //메인//intro Hover ani
